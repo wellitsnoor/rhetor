@@ -6,6 +6,10 @@
   --color-secondary: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #181818;
   color: white;
