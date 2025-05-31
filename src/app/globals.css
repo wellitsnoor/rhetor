@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-rhetor: #b02b2d;
+  --color-primary: #181818;
+  --color-secondary: white;
+}
+
+body {
+  background-color: #181818;
+  color: white;
 }
