@@ -18,18 +18,17 @@ export default function Lander() {
   useEffect(() => {
     const tl = gsap.timeline({ repeat: 0, ease: "power2.inOut" });
 
+    gsap.set([nucleus.current], {
+      scale: 0.5,
+    });
     gsap.set(
-      [
-        nucleus.current,
-        circle1.current,
-        circle2.current,
-        circle3.current,
-        circle4.current,
-        circle5.current,
-        circle6.current,
-        circle7.current,
-        circle8.current,
-      ],
+      [circle1.current, circle2.current, circle3.current, circle4.current],
+      {
+        scale: 0.7,
+      }
+    );
+    gsap.set(
+      [circle5.current, circle6.current, circle7.current, circle8.current],
       {
         scale: 0.5,
       }
@@ -117,6 +116,7 @@ export default function Lander() {
     };
   }, []);
 
+
   return (
     <div className="w-screen h-screen flex flex-row ">
       <div className="w-1/2 h-full flex flex-col justify-center px-20 text-5xl">
@@ -136,39 +136,39 @@ export default function Lander() {
       <div className="w-1/2 h-full relative flex justify-center items-center">
         <div
           ref={nucleus}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full "
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle1}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle2}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle3}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle4}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle5}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle6}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/30 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/30 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle7}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle8}
-          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
+          className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
       </div>
     </div>

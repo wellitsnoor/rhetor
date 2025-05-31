@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="flex mr-auto pl-10 z-50">
           <div className="flex items-center justify-between w-40">
             <a href="/">
-              <Image 
+              <Image
                 src="/logo/text-red.png"
                 alt="logo"
                 width={0}
@@ -24,7 +24,7 @@ export default function Navbar() {
         </div>
         <div className="flex ml-auto right-0 pr-10 z-50 ">
           <div className="flex items-center justify-between">
-            <ul className="flex items-center justify-between gap-10">
+            <ul className="items-center justify-between gap-10 hidden md:flex">
               <li>
                 <a href="#">Home</a>
               </li>
@@ -38,6 +38,14 @@ export default function Navbar() {
                 <a href="#">Contact</a>
               </li>
             </ul>
+            <Image
+              src="/logo/logo-red.png"
+              alt="logo"
+              width={0}
+              height={0}
+              sizes="100% 100%"
+              className="w-10 h-10 object-contain md:hidden flex"
+            />
           </div>
         </div>
       </div>
