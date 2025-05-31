@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Button from "./Button";
 import gsap from "gsap";
 
@@ -14,9 +14,16 @@ export default function Lander() {
   const circle6 = useRef<HTMLDivElement>(null);
   const circle7 = useRef<HTMLDivElement>(null);
   const circle8 = useRef<HTMLDivElement>(null);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline({ repeat: 0, ease: "power2.inOut" });
+
+    if (window.innerWidth <= 768) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
 
     gsap.set([nucleus.current], {
       scale: 0.5,
@@ -116,10 +123,9 @@ export default function Lander() {
     };
   }, []);
 
-
   return (
-    <div className="w-screen h-screen flex flex-row ">
-      <div className="w-1/2 h-full flex flex-col justify-center px-20 text-5xl">
+    <div className="w-screen h-screen flex md:flex-row flex-col ">
+      <div className="md:w-1/2 w-full h-full flex flex-col justify-center px-20 md:py-0 py-40 md:text-5xl text-3xl">
         <p className="">At Rhetor, we believe</p>
         <p className="">
           <b className="text-rhetor"> great content </b> takes{" "}
@@ -133,7 +139,7 @@ export default function Lander() {
         </p>
         <Button text="Know more" link="/" />
       </div>
-      <div className="w-1/2 h-full relative flex justify-center items-center">
+      <div className="md:w-1/2 w-full h-full md:mt-0 mt-20 relative flex justify-center items-center">
         <div
           ref={nucleus}
           className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
