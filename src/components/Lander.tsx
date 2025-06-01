@@ -5,6 +5,7 @@ import Button from "./Button";
 import gsap from "gsap";
 
 export default function Lander() {
+  const container = useRef<HTMLDivElement>(null);
   const nucleus = useRef<HTMLDivElement>(null);
   const circle1 = useRef<HTMLDivElement>(null);
   const circle2 = useRef<HTMLDivElement>(null);
@@ -12,37 +13,44 @@ export default function Lander() {
   const circle4 = useRef<HTMLDivElement>(null);
   const circle5 = useRef<HTMLDivElement>(null);
   const circle6 = useRef<HTMLDivElement>(null);
-  const circle7 = useRef<HTMLDivElement>(null);
-  const circle8 = useRef<HTMLDivElement>(null);
-  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline({ repeat: 0, ease: "power2.inOut" });
-
-    if (window.innerWidth <= 768) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
 
     gsap.set([nucleus.current], {
       scale: 0.5,
     });
     gsap.set(
-      [circle1.current, circle2.current, circle3.current, circle4.current],
+      [
+        circle1.current,
+        circle2.current,
+        circle3.current,
+        circle4.current,
+        circle5.current,
+        circle6.current,
+      ],
       {
         scale: 0.7,
       }
     );
-    gsap.set(
-      [circle5.current, circle6.current, circle7.current, circle8.current],
+
+    gsap.to(
+      [
+        circle1.current,
+        circle2.current,
+        circle3.current,
+        circle4.current,
+        circle5.current,
+        circle6.current,
+      ],
       {
-        scale: 0.5,
+        scale: 1,
+        duration: 1,
       }
     );
 
     tl.to(
-      nucleus.current,
+      [nucleus.current],
       {
         scale: 1,
         duration: 1,
@@ -50,20 +58,30 @@ export default function Lander() {
       0
     )
       .to(
-        circle1.current,
+        circle4.current,
         {
-          x: 150,
+          y: -150,
           duration: 1,
         },
         0.3
       )
       .to(
-        circle2.current,
+        circle5.current,
         {
-          x: -150,
+          x: 150,
+          y: -70,
           duration: 1,
         },
-        0.3
+        0.5
+      )
+      .to(
+        circle1.current,
+        {
+          x: 150,
+          y: 70,
+          duration: 1,
+        },
+        0.7
       )
       .to(
         circle3.current,
@@ -71,21 +89,13 @@ export default function Lander() {
           y: 150,
           duration: 1,
         },
-        0.4
+        0.9
       )
       .to(
-        circle4.current,
+        circle2.current,
         {
-          y: -150,
-          duration: 1,
-        },
-        0.5
-      )
-      .to(
-        circle5.current,
-        {
-          x: 150,
-          y: 150,
+          x: -150,
+          y: 70,
           duration: 1,
         },
         1.1
@@ -94,28 +104,10 @@ export default function Lander() {
         circle6.current,
         {
           x: -150,
-          y: -150,
+          y: -70,
           duration: 1,
         },
         1.3
-      )
-      .to(
-        circle7.current,
-        {
-          x: 150,
-          y: -150,
-          duration: 1,
-        },
-        1.5
-      )
-      .to(
-        circle8.current,
-        {
-          x: -150,
-          y: 150,
-          duration: 1,
-        },
-        1.7
       );
 
     return () => {
@@ -137,9 +129,12 @@ export default function Lander() {
           {" "}
           it takes <b className="">INTENT.</b>
         </p>
-        <Button text="Know more" link="/" />
+        <Button text="Know more" link="/#about" />
       </div>
-      <div className="md:w-1/2 w-full h-full md:mt-0 mt-20 relative flex justify-center items-center">
+      <div
+        className="md:w-1/2 w-full h-full md:mt-0 mt-20 relative flex justify-center items-center"
+        ref={container}
+      >
         <div
           ref={nucleus}
           className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
@@ -168,14 +163,14 @@ export default function Lander() {
           ref={circle6}
           className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/30 rounded-full cursor-pointer"
         ></div>
-        <div
+        {/* <div
           ref={circle7}
           className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle8}
           className="absolute w-28 h-28 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
-        ></div>
+        ></div> */}
       </div>
     </div>
   );

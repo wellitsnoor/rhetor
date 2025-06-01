@@ -13,7 +13,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between w-40">
             <a href="/">
               <Image
-                src={open ? "/logo/text-white.png" : "/logo/text-red.png"}
+                src={open ? "/logo/text-white.png" : "/logo/text-white.png"}
                 alt="logo"
                 width={0}
                 height={0}
