@@ -99,19 +99,19 @@ export default function About() {
       </div>
       <div className="w-full h-screen flex flex-row">
         <div className="w-1/2 h-full flex flex-col justify-center items-center">
-          <div className="flex flex-col ">
-            <p className="text-5xl">We don't just "do" </p>
-            <p className="text-5xl">
+          <div className="flex flex-col text-5xl">
+            <p className="">We don't just "do" </p>
+            <p className="">
               <b className="text-gray-500">influencer marketing</b> or
             </p>
-            <p className="text-5xl">
+            <p className="">
               <b className="text-gray-500">content production</b>.
             </p>
 
-            <p className="text-5xl ml-20 mt-3 text-right">
+            <p className=" ml-20 mt-3 text-right">
               We help you <b>grow</b>
             </p>
-            <p className="text-5xl ml-20 text-right">
+            <p className=" ml-20 text-right">
               <b>connect</b> , and <b>thrive</b>.
             </p>
           </div>
