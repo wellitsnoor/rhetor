@@ -1,8 +1,11 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import Button from "./Button";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Lander() {
   const container = useRef<HTMLDivElement>(null);
@@ -15,109 +18,125 @@ export default function Lander() {
   const circle6 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ repeat: 0, ease: "power2.inOut" });
+    const ctx = gsap.context(() => {
+      const cell = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: "bottom 20%",
+          toggleActions: "restart none none none",
+        },
+        defaults: {
+          repeat: 0,
+          ease: "power2.inOut",
+          delay: 0.3,
+        },
+      });
 
-    gsap.set([nucleus.current], {
-      scale: 0.5,
-    });
-    gsap.set(
-      [
-        circle1.current,
-        circle2.current,
-        circle3.current,
-        circle4.current,
-        circle5.current,
-        circle6.current,
-      ],
-      {
-        scale: 0.7,
-      }
-    );
-
-    gsap.to(
-      [
-        circle1.current,
-        circle2.current,
-        circle3.current,
-        circle4.current,
-        circle5.current,
-        circle6.current,
-      ],
-      {
-        scale: 1,
-        duration: 1,
-      }
-    );
-
-    tl.to(
-      [nucleus.current],
-      {
-        scale: 1,
-        duration: 1,
-      },
-      0
-    )
-      .to(
-        circle4.current,
+      gsap.set([nucleus.current], {
+        scale: 0.5,
+      });
+      gsap.set(
+        [
+          circle1.current,
+          circle2.current,
+          circle3.current,
+          circle4.current,
+          circle5.current,
+          circle6.current,
+        ],
         {
-          y: -150,
-          duration: 1,
-        },
-        0.3
-      )
-      .to(
-        circle5.current,
-        {
-          x: 150,
-          y: -70,
-          duration: 1,
-        },
-        0.5
-      )
-      .to(
-        circle1.current,
-        {
-          x: 150,
-          y: 70,
-          duration: 1,
-        },
-        0.7
-      )
-      .to(
-        circle3.current,
-        {
-          y: 150,
-          duration: 1,
-        },
-        0.9
-      )
-      .to(
-        circle2.current,
-        {
-          x: -150,
-          y: 70,
-          duration: 1,
-        },
-        1.1
-      )
-      .to(
-        circle6.current,
-        {
-          x: -150,
-          y: -70,
-          duration: 1,
-        },
-        1.3
+          scale: 0.7,
+        }
       );
 
+      gsap.to(
+        [
+          circle1.current,
+          circle2.current,
+          circle3.current,
+          circle4.current,
+          circle5.current,
+          circle6.current,
+        ],
+        {
+          scale: 1,
+          duration: 1,
+        }
+      );
+
+      cell
+        .to(
+          [nucleus.current],
+          {
+            scale: 1,
+            duration: 1,
+          },
+          0
+        )
+        .to(
+          circle4.current,
+          {
+            y: -150,
+            duration: 1,
+          },
+          0.3
+        )
+        .to(
+          circle5.current,
+          {
+            x: 150,
+            y: -70,
+            duration: 1,
+          },
+          0.5
+        )
+        .to(
+          circle1.current,
+          {
+            x: 150,
+            y: 70,
+            duration: 1,
+          },
+          0.7
+        )
+        .to(
+          circle3.current,
+          {
+            y: 150,
+            duration: 1,
+          },
+          0.9
+        )
+        .to(
+          circle2.current,
+          {
+            x: -150,
+            y: 70,
+            duration: 1,
+          },
+          1.1
+        )
+        .to(
+          circle6.current,
+          {
+            x: -150,
+            y: -70,
+            duration: 1,
+          },
+          1.3
+        );
+
+      cell.play();
+    });
+
     return () => {
-      tl.kill();
+      ctx.revert();
     };
   }, []);
 
   return (
     <div className="w-screen h-screen flex md:flex-row flex-col ">
-      <div className="md:w-1/2 w-full h-full flex flex-col justify-center px-20 md:py-0 py-40 md:text-5xl text-3xl">
+      <div className="md:w-1/2  w-full h-full flex flex-col justify-center md:pl-40 pl-10 md:py-0 py-40 md:text-5xl text-3xl">
         <p className="">At Rhetor, we believe</p>
         <p className="">
           <b className="text-rhetor"> great content </b> takes{" "}
@@ -132,7 +151,7 @@ export default function Lander() {
         <Button text="Know more" link="/#about" />
       </div>
       <div
-        className="md:w-1/2 w-full h-full md:mt-0 mt-20 relative flex justify-center items-center"
+        className="md:w-1/2 w-full h-full  md:mt-0 mt-20  relative flex justify-center items-center"
         ref={container}
       >
         <div
