@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import BigBang from "./Animations/BigBang";
+import Camera from "./Animations/Camera";
 
 export default function Services() {
   const services = [
@@ -61,8 +62,8 @@ export default function Services() {
           <div className="flex flex-col mt-10 gap-3">
             {active === 0 && <p>Animation</p>}
             {active === 1 && (
-              <div>
-                <p>Animation</p>
+              <div className="">
+                <Camera/>
               </div>
             )}
             {active === 2 && (
