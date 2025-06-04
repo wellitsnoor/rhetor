@@ -71,7 +71,7 @@ export default function About() {
 
   return (
     <>
-      <div className="w-full h-screen flex flex-row ">
+      <div className="w-full h-screen flex flex-row">
         <div className="w-1/2 h-full flex flex-col justify-center items-center">
           <h1 className="text-4xl font-bold">animation</h1>
         </div>
@@ -97,7 +97,7 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="w-full h-screen flex flex-row">
+      <div className="w-full overflow-hidden h-screen flex flex-row">
         <div className="w-1/2 h-full flex flex-col justify-center items-center">
           <div className="flex flex-col text-5xl">
             <p className="">We don't just "do" </p>
@@ -136,7 +136,7 @@ export default function About() {
         </div>
         <div
           ref={container}
-          className="w-1/2 h-full flex -translate-x-[20%] translate-y-[10%] flex-col justify-center items-center relative"
+          className="w-1/2 h-full max-h-screen flex -translate-x-[20%] translate-y-[10%] flex-col justify-center items-center relative"
         >
           <div
             ref={circle1}
