@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import BigBang from "./Animations/BigBang";
 import Camera from "./Animations/Camera";
+import Building from "./Animations/Building";
 
 export default function Services() {
   const services = [
@@ -32,7 +33,9 @@ export default function Services() {
   return (
     <div className="w-full h-screen flex flex-col md:flex-row justify-center md:items-center px-16 ">
       <div className="md:w-1/2 w-full">
-        <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">Our Services</h1>
+        <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
+          Our Services
+        </h1>
 
         <div className="flex flex-col mt-10 md:w-[80%]">
           {services.map((service, index) => (
@@ -42,7 +45,7 @@ export default function Services() {
               onClick={() => setActive(index)}
             >
               <p
-                className={`text-2xl font-bold first:rounded-tl-xl items-center flex rounded- border-1 border-white/50 border-r-0 transition-all last:border-b-0 rounded-br-0 px-5 py-3 cursor-pointer ${
+                className={`text-2xl xl:text-3xl font-bold first:rounded-tl-xl items-center flex rounded- border-1 border-white/50 border-r-0 transition-all last:border-b-0 rounded-br-0 px-5 py-3 cursor-pointer ${
                   active === index ? "text-rhetor py-5" : "text-white"
                 }`}
               >
@@ -60,10 +63,10 @@ export default function Services() {
       <div className="md:w-1/2 w-full ">
         {active !== null ? (
           <div className="flex flex-col mt-10 gap-3">
-            {active === 0 && <p>Animation</p>}
+            {active === 0 && <Building />}
             {active === 1 && (
               <div className="">
-                <Camera/>
+                <Camera />
               </div>
             )}
             {active === 2 && (
@@ -73,10 +76,10 @@ export default function Services() {
             )}
 
             <div>
-              <p className="text-3xl md:text-4xl font-bold mt-10 xl:mt-20">
+              <p className="text-3xl xl:px-20 md:text-4xl  font-bold mt-10 xl:mt-20">
                 {services[active].title2}
               </p>
-              <p className="text-sm md:text-base xl:text-xl mt-5 font-normal text-justify">
+              <p className="text-sm xl:px-20 md:text-base xl:text-2xl mt-5 font-normal text-justify">
                 {services[active].description}
               </p>
             </div>
