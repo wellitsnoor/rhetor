@@ -24,7 +24,7 @@ export default function Building() {
 
     grow.to(buildings.current, {
       height: (index) => {
-        const heights = [48, 80, 112, 160]; // h-12, h-20, h-28, h-40 in pixels
+        const heights = !mobile ? [48, 80, 112, 160] : [12, 20, 28, 40]; // h-12, h-20, h-28, h-40 in pixels
         return heights[index];
       },
       duration: 1,
