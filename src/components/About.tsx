@@ -71,17 +71,17 @@ export default function About() {
 
   return (
     <>
-      <div className="w-full h-screen flex flex-row">
-        <div className="w-1/2 h-full flex flex-col justify-center items-center">
+      <div className="w-full h-screen flex md:flex-row flex-col-reverse">
+        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center">
           <h1 className="text-4xl font-bold">animation</h1>
         </div>
-        <div className="w-1/2 h-full flex flex-col justify-center items-center">
+        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-10">
           <div className="flex flex-col ">
-            <motion.p className="text-5xl">
+            <motion.p className="xl:text-5xl text-4xl">
               <b className="text-gray-500">How</b> we work{" "}
               <b className="text-rhetor">·</b>
             </motion.p>
-            <p className="text-5xl ml-20 mt-3">
+            <p className="xl:text-5xl text-4xl ml-20 mt-3">
               <b className="text-rhetor">·</b>{" "}
               <b className="text-gray-500">Why</b> it <b>works</b>
             </p>
@@ -97,9 +97,9 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="w-full overflow-hidden h-screen flex flex-row">
-        <div className="w-1/2 h-full flex flex-col justify-center items-center">
-          <div className="flex flex-col text-5xl">
+      <div className="w-full overflow-hidden h-screen flex md:flex-row flex-col ">
+        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-10">
+          <div className="flex flex-col xl:text-5xl text-3xl ml-0 md:ml-10 xl:ml-0">
             <p className="">We don't just "do" </p>
             <p className="">
               <b className="text-gray-500">influencer marketing</b> or
@@ -112,12 +112,12 @@ export default function About() {
               We help you <b>grow</b>
             </p>
             <p className=" ml-20 text-right">
-              <b>connect</b> , and <b>thrive</b>.
+              <b>connect</b>, and <b>thrive</b>.
             </p>
           </div>
 
-          <div className="w-[80%] mt-14 flex justify-center items-center gap-10">
-            <p className="flex flex-row justify-center items-center">
+          <div className="xl:w-[80%] w-[90%] mt-14 flex justify-center items-center gap-10 xl:text-base text-sm">
+            <p className="flex flex-row justify-center items-center ">
               {" "}
               <b className="text-rhetor text-5xl mr-3">·</b>Clear thinking
               behind every campaign
@@ -136,7 +136,7 @@ export default function About() {
         </div>
         <div
           ref={container}
-          className="w-1/2 h-full max-h-screen flex -translate-x-[20%] translate-y-[10%] flex-col justify-center items-center relative"
+          className="w-1/2 hidden h-full max-h-screen flex -translate-x-[20%] translate-y-[10%] flex-col justify-center items-center relative"
         >
           <div
             ref={circle1}

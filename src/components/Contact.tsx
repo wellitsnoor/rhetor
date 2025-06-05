@@ -6,40 +6,42 @@ import gsap from "gsap";
 export default function About() {
   return (
     <>
-      <div className="w-full h-screen flex flex-row">
-        <div className="w-1/2 flex flex-col justify-center items-center relative">
+      <div className="w-full h-screen flex md:flex-row flex-col-reverse">
+        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center relative">
           animation
         </div>
-        <div className="w-1/2 h-full flex flex-col justify-center items-center">
-          <div className="flex flex-col text-5xl w-full pl-20">
+        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-10">
+          <div className="flex flex-col md:text-5xl text-4xl w-full pl-15 md:pl-20">
             <p className="">
               Let's <b className="text-gray-500">Work</b> Together{" "}
             </p>
           </div>
 
-          <div className="w-[80%] mt-10 flex justify-center items-center gap-10">
-            <p className="flex flex-row justify-center items-center">
-              {" "}
+          <div className="xl:w-[80%] w-[70%] mt-10 flex justify-center items-center gap-10 xl:text-base text-sm">
+            <div className="flex items-center ">
               <b className="text-rhetor text-5xl mr-3">·</b>
-              Reach out to us on{" "}
-              <a
-                href="https://www.instagram.com/rhetor.in/"
-                className="underline ml-1"
-              >
-                Instagram
-              </a>
-            </p>
-            <p className="flex flex-row justify-center items-center">
-              {" "}
+              <p className="flex flex-wrap">
+                Reach out to us on
+                <a
+                  href="https://www.instagram.com/rhetor.in/"
+                  className="underline"
+                >
+                  Instagram
+                </a>
+              </p>
+            </div>
+            <div className="flex items-center">
               <b className="text-rhetor text-5xl mr-3">·</b>
-              Send us an email at{" "}
-              <a href="mailto:info@rhetor.agency" className="underline ml-1">
-                info@rhetor.in
-              </a>
-            </p>
+              <p className="flex flex-wrap">
+                Send us an email at
+                <a href="mailto:info@rhetor.agency" className="underline">
+                  info@rhetor.in
+                </a>
+              </p>
+            </div>
           </div>
 
-          <div className="flex mt-20 w-full pr-20 text-right flex-col text-5xl">
+          <div className="flex mt-10 w-full pr-20 text-right flex-col md:text-5xl text-4xl">
             <p className="">We'll get back, </p>
             <b className="text-gray-500">quick.</b>
           </div>
