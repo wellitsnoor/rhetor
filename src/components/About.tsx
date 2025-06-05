@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Bubble from "./Animations/Bubble";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,7 +74,7 @@ export default function About() {
     <>
       <div className="w-full h-screen flex md:flex-row flex-col-reverse">
         <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center">
-          <h1 className="text-4xl font-bold">animation</h1>
+          <Bubble />
         </div>
         <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-10">
           <div className="flex flex-col ">
@@ -136,7 +137,7 @@ export default function About() {
         </div>
         <div
           ref={container}
-          className="w-1/2 hidden h-full max-h-screen flex -translate-x-[20%] translate-y-[10%] flex-col justify-center items-center relative"
+          className="w-1/2 h-full max-h-screen flex -translate-x-[20%] translate-y-[10%] flex-col justify-center items-center relative"
         >
           <div
             ref={circle1}

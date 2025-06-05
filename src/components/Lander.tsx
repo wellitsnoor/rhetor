@@ -21,7 +21,9 @@ export default function Lander() {
 
   useEffect(() => {
     const handleResize = () => {
-      setBase(window.innerWidth < 768 ? 0.5 : window.innerWidth < 1024 ? 0.7 : 1);
+      setBase(
+        window.innerWidth < 768 ? 0.5 : window.innerWidth < 1024 ? 0.7 : 1
+      );
     };
 
     handleResize();
@@ -32,13 +34,14 @@ export default function Lander() {
       const cell = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
-          start: "bottom 20%",
+          start: "top bottom",
           toggleActions: "restart none none none",
+          onEnter: () => cell.restart(),
+          onEnterBack: () => cell.restart(),
         },
         defaults: {
           repeat: 0,
           ease: "power2.inOut",
-          delay: 0.3,
         },
       });
 
@@ -183,7 +186,7 @@ export default function Lander() {
         ></div>
         <div
           ref={circle4}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"  
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
         ></div>
         <div
           ref={circle5}
