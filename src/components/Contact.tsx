@@ -24,7 +24,7 @@ export default function About() {
                 Reach out to us on
                 <a
                   href="https://www.instagram.com/rhetor.in/"
-                  className="underline"
+                  className="underline sm:ml-1 ml-0"
                 >
                   Instagram
                 </a>
@@ -34,7 +34,7 @@ export default function About() {
               <b className="text-rhetor text-5xl mr-3">·</b>
               <p className="flex flex-wrap">
                 Send us an email at
-                <a href="mailto:info@rhetor.agency" className="underline">
+                <a href="mailto:info@rhetor.agency" className="underline sm:ml-1 ml-0">
                   info@rhetor.in
                 </a>
               </p>
