@@ -28,16 +28,16 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <ul className="items-center justify-between gap-10 hidden md:flex">
               <li>
-                <a href="#">Home</a>
+                <a href="/#" onClick={() => setOpen(false)}>Home</a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="/#about" onClick={() => setOpen(false)}>About</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="/#services" onClick={() => setOpen(false)}>Services</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="/#contact" onClick={() => setOpen(false)}>Contact</a>
               </li>
             </ul>
             <Image
@@ -64,16 +64,16 @@ export default function Navbar() {
           >
             <ul className="flex flex-col items-center justify-center h-full gap-10 text-2xl">
               <li>
-                <a href="#">Home</a>
+                <a href="/#" onClick={() => setOpen(false)}>Home</a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="/#about" onClick={() => setOpen(false)}>About</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="/#services" onClick={() => setOpen(false)}>Services</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="/#contact" onClick={() => setOpen(false)}>Contact</a>
               </li>
 
             </ul>
