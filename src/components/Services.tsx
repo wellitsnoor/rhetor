@@ -5,6 +5,7 @@ import gsap from "gsap";
 import BigBang from "./Animations/BigBang";
 import Camera from "./Animations/Camera";
 import Building from "./Animations/Building";
+import Grid from "./Animations/Grid";
 
 export default function Services() {
   const services = [
@@ -37,7 +38,7 @@ export default function Services() {
           Our Services
         </h1>
 
-        <div className="flex flex-col mt-10 md:w-[80%]">
+        <div className="flex flex-col md:mt-20 mt-10 md:w-[80%] xl:w-[60%]">
           {services.map((service, index) => (
             <div
               key={index}
@@ -45,8 +46,8 @@ export default function Services() {
               onClick={() => setActive(index)}
             >
               <p
-                className={`text-2xl xl:text-3xl font-bold first:rounded-tl-xl items-center flex rounded- border-1 border-white/50 border-r-0 transition-all last:border-b-0 rounded-br-0 px-5 py-3 cursor-pointer ${
-                  active === index ? "text-rhetor py-5" : "text-white"
+                className={`text-2xl xl:text-3xl font-bold first:rounded-tl-xl items-center flex rounded- border-1 border-white/50 border-r-0 transition-all last:border-b-0 rounded-br-0 px-5 md:py-5 py-3 cursor-pointer ${
+                  active === index ? "text-rhetor md:py-7 py-5" : "text-white"
                 }`}
               >
                 <small className="text-sm mr-2 font-normal text-white">
@@ -63,6 +64,20 @@ export default function Services() {
       <div className="md:w-1/2 w-full ">
         {active !== null ? (
           <div className="flex flex-col mt-10 gap-3">
+            <svg
+              onClick={() => setActive(null)}
+              viewBox="0 0 24 24"
+              stroke="white"
+              className="size-10 md:size-12 cursor-pointer ml-auto -translate-y-5"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 8L8 16M8.00001 8L16 16"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
             {active === 0 && <Building />}
             {active === 1 && (
               <div className="">
@@ -85,8 +100,8 @@ export default function Services() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col mt-10 gap-3">
-            <p>Animation</p>
+          <div className="flex flex-col mt-10">
+            <Grid />
           </div>
         )}
       </div>

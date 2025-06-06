@@ -42,6 +42,7 @@ export default function Building() {
       {[...Array(4)].map((_, i) => {
         return (
           <div
+            key={i}
             className="w-16 bg-rhetor flex mt-auto"
             ref={(el) => {
               if (el) buildings.current[i] = el;
