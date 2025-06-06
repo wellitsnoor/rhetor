@@ -18,13 +18,13 @@ export default function Grid() {
   const outer7 = useRef<HTMLDivElement>(null);
   const outer8 = useRef<HTMLDivElement>(null);
 
-  const [key, setKey] = useState(0);
+  const [key, setKey] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
-      setKey(Math.random());
+      setKey((prev) => prev + 1);
     };
-    handleResize();
+
     window.addEventListener("resize", handleResize);
 
     const flower = gsap.timeline({
@@ -114,14 +114,15 @@ export default function Grid() {
       );
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       flower.kill();
     };
-  });
+  }, [key]);
 
   return (
     <div
       key={key}
-      className="relative w-full h-full flex justify-center items-center bg-red-200 translate-y-[10rem]"
+      className="relative w-full h-full flex justify-center items-center bg-red-200 md:translate-y-0 translate-y-[10rem]"
       ref={container}
     >
       {/* horizontal */}
