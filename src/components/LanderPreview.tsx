@@ -151,7 +151,7 @@ export default function Lander() {
 
   return (
     <div className="w-screen h-screen flex md:flex-row flex-col">
-      <div className="md:w-1/2 w-full h-full flex flex-col justify-center xl:pl-40 md:pl-20 pl-10 md:py-0 mt-10 xl:text-5xl lg:text-[2.5rem] text-3xl ">
+      <div className="md:w-1/2 w-full h-full flex flex-col justify-center xl:pl-40 md:pl-20 pl-10 md:py-0 mt-10 md:mt-0 xl:text-5xl lg:text-[2.5rem] text-3xl ">
         <p className="">At Rhetor, we believe</p>
         <p className="">
           <b className="text-rhetor"> great content </b> takes{" "}
