@@ -1,14 +1,14 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Lander from "@/components/Lander";
+import LanderPreview from "@/components/LanderPreview";
 import Services from "@/components/Services";
 import React from "react";
 
 export default function page() {
   return (
     <>
-      <Lander />
-      <section id="about">
+      <LanderPreview />
+      {/* <section id="about">
         <About />
       </section>
       <section id="services">
@@ -16,7 +16,7 @@ export default function page() {
       </section>  
       <section id="contact">
         <Contact />
-      </section>
+      </section> */}
     </>
   );
 }
