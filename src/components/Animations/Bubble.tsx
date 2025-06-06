@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -13,7 +13,17 @@ export default function Bubble() {
   const cell3 = useRef<HTMLDivElement>(null);
   const cell4 = useRef<HTMLDivElement>(null);
 
+  const [mobile, setMobile] = useState(false);
+
   useEffect(() => {
+    const handleResize = () => {
+      setMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
     const birth = gsap.timeline({
       ease: "power2.inOut",
       scrollTrigger: {
