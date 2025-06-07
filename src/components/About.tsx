@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,14 +15,22 @@ export default function About() {
   const circle3 = useRef<HTMLDivElement>(null);
   const circle4 = useRef<HTMLDivElement>(null);
 
+  const [mobile, setMobile] = useState(false);
+
   useEffect(() => {
+    const handleResize = () => {
+      setMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
     const ctx = gsap.context(() => {
       const expland = gsap.timeline({
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top 80%", // when top of container hits 80% of viewport
-          toggleActions: "restart none none none", // play only once
-        },
+        // scrollTrigger: {
+        //   trigger: container.current,
+        //   start: "top 80%", // when top of container hits 80% of viewport
+        //   toggleActions: "restart none none none", // play only once
+        // },
         repeat: 0,
         ease: "power2.inOut",
       });
@@ -39,8 +47,8 @@ export default function About() {
         .to(
           circle2.current,
           {
-            x: 100,
-            y: -50,
+            x: mobile ? 50 : 100,
+            y: mobile ? -25 : -50,
             duration: 1,
           },
           0.3
@@ -48,8 +56,8 @@ export default function About() {
         .to(
           circle3.current,
           {
-            x: 200,
-            y: -100,
+            x: mobile ? 100 : 200,
+            y: mobile ? -50 : -100,
             duration: 1,
           },
           0.6
@@ -57,8 +65,8 @@ export default function About() {
         .to(
           circle4.current,
           {
-            x: 300,
-            y: -150,
+            x: mobile ? 150 : 300,
+            y: mobile ? -75 : -150,
             duration: 1,
           },
           0.9
@@ -67,6 +75,7 @@ export default function About() {
 
     return () => {
       ctx.revert();
+      window.removeEventListener("resize", handleResize);
     };
   });
 
@@ -137,23 +146,23 @@ export default function About() {
         </div>
         <div
           ref={container}
-          className="w-1/2 h-full max-h-screen flex -translate-x-[20%] translate-y-[10%] flex-col justify-center items-center relative"
+          className="md:w-1/2 w-full h-full max-h-screen flex lg:-translate-x-[10%] md:-translate-x-[10%] -translate-x-[15%] translate-y-[5%] flex-col justify-center items-center relative"
         >
           <div
             ref={circle1}
-            className=" w-28 h-28 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer justify-center items-center"
+            className="lg:w-28  w-16 lg:h-28  h-16 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer justify-center items-center"
           ></div>
           <div
             ref={circle2}
-            className=" w-28 h-28 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+            className=" lg:w-28  w-16 lg:h-28  h-16 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
           ></div>
           <div
             ref={circle3}
-            className=" w-28 h-28 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+            className=" lg:w-28  w-16 lg:h-28  h-16 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
           ></div>
           <div
             ref={circle4}
-            className=" w-28 h-28 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+            className=" lg:w-28  w-16 lg:h-28  h-16 absolute bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
           ></div>
         </div>
       </div>

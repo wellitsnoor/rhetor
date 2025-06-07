@@ -29,15 +29,15 @@ export default function Grid() {
 
     const flower = gsap.timeline({
       ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: container.current,
-        start: "top bottom",
-        toggleActions: "restart none none none",
-        onEnter: () => flower.play(),
-        onEnterBack: () => flower.restart(),
-        onLeave: () => flower.progress(0).pause(),
-        onLeaveBack: () => flower.progress(0).pause(),
-      },
+      // scrollTrigger: {
+      //   trigger: container.current,
+      //   start: "top bottom",
+      //   toggleActions: "restart none none none",
+      //   // onEnter: () => flower.play(),
+      //   // onEnterBack: () => flower.restart(),
+      //   // onLeave: () => flower.progress(0).pause(),
+      //   // onLeaveBack: () => flower.progress(0).pause(),
+      // },
     });
 
     gsap.set(
@@ -122,7 +122,7 @@ export default function Grid() {
   return (
     <div
       key={key}
-      className="relative w-full h-full flex justify-center items-center bg-red-200 md:translate-y-0 translate-y-[10rem]"
+      className="relative w-full h-full flex justify-center items-center  md:translate-y-0 translate-y-[10rem]"
       ref={container}
     >
       {/* horizontal */}
