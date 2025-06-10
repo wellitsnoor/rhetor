@@ -3,15 +3,36 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-export default function Navbar() {
+gsap.registerPlugin(ScrollToPlugin);
+
+type NavbarProps = {
+  sectionsRef: React.MutableRefObject<HTMLElement[]>;
+};
+
+export default function Navbar({ sectionsRef }: NavbarProps) {
   const [open, setOpen] = useState(false);
+
+  const scrollToSection = (index: number) => {
+    const section = sectionsRef.current[index];
+    if (section) {
+      gsap.to(window, {
+        scrollTo: section,
+        duration: 0.75,
+        ease: "power2.out",
+      });
+    }
+    setOpen(false);
+  };
+
   return (
     <>
       <div className="fixed flex top-0 h-20 justify-between items-center w-full z-50">
         <div className="flex mr-auto md:pl-10 pl-7 z-50">
           <div className="flex items-center justify-between md:w-40 w-36">
-            <a href="/">
+            <a href="/" onClick={(e) => e.preventDefault()}>
               <Image
                 src={open ? "/logo/text-white.png" : "/logo/text-white.png"}
                 alt="logo"
@@ -28,20 +49,20 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <ul className="items-center justify-between gap-10 hidden md:flex">
               <li>
-                <a href="/#" onClick={() => setOpen(false)}>Home</a>
+                <button onClick={() => scrollToSection(0)}>Home</button>
               </li>
               <li>
-                <a href="/#about" onClick={() => setOpen(false)}>About</a>
+                <button onClick={() => scrollToSection(1)}>About</button>
               </li>
               <li>
-                <a href="/#services" onClick={() => setOpen(false)}>Services</a>
+                <button onClick={() => scrollToSection(3)}>Services</button>
               </li>
               <li>
-                <a href="/#contact" onClick={() => setOpen(false)}>Contact</a>
+                <button onClick={() => scrollToSection(4)}>Contact</button>
               </li>
             </ul>
             <Image
-              src="/logo/logo-white.png"
+              src="/logo/logo-red.png"
               alt="logo"
               width={0}
               height={0}
@@ -64,18 +85,17 @@ export default function Navbar() {
           >
             <ul className="flex flex-col items-center justify-center h-full gap-10 text-2xl">
               <li>
-                <a href="/#" onClick={() => setOpen(false)}>Home</a>
+                <button onClick={() => scrollToSection(0)}>Home</button>
               </li>
               <li>
-                <a href="/#about" onClick={() => setOpen(false)}>About</a>
+                <button onClick={() => scrollToSection(1)}>About</button>
               </li>
               <li>
-                <a href="/#services" onClick={() => setOpen(false)}>Services</a>
+                <button onClick={() => scrollToSection(3)}>Services</button>
               </li>
               <li>
-                <a href="/#contact" onClick={() => setOpen(false)}>Contact</a>
+                <button onClick={() => scrollToSection(4)}>Contact</button>
               </li>
-
             </ul>
           </motion.div>
         )}
