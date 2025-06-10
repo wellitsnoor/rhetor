@@ -49,16 +49,16 @@ export default function Navbar({ sectionsRef }: NavbarProps) {
           <div className="flex items-center justify-between">
             <ul className="items-center justify-between gap-10 hidden md:flex">
               <li>
-                <button onClick={() => scrollToSection(0)}>Home</button>
+                <button className="cursor-pointer" onClick={() => scrollToSection(0)}>Home</button>
               </li>
               <li>
-                <button onClick={() => scrollToSection(1)}>About</button>
+                <button className="cursor-pointer" onClick={() => scrollToSection(1)}>About</button>
               </li>
               <li>
-                <button onClick={() => scrollToSection(3)}>Services</button>
+                <button className="cursor-pointer" onClick={() => scrollToSection(3)}>Services</button>
               </li>
               <li>
-                <button onClick={() => scrollToSection(4)}>Contact</button>
+                <button className="cursor-pointer" onClick={() => scrollToSection(4)}>Contact</button>
               </li>
             </ul>
             <Image
@@ -81,7 +81,7 @@ export default function Navbar({ sectionsRef }: NavbarProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className={`fixed w-screen bg-rhetor h-screen z-20`}
+            className={`fixed w-screen bg-rhetor h-screen z-20 `}
           >
             <ul className="flex flex-col items-center justify-center h-full gap-10 text-2xl">
               <li>

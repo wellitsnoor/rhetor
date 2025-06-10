@@ -51,7 +51,7 @@ export default function Page() {
         id="home"
         className="h-screen"
       >
-        <Lander />
+        <Lander sectionsRef={sectionsRef} />
       </section>
       <section
         ref={(el) => {
@@ -59,7 +59,7 @@ export default function Page() {
             sectionsRef.current[1] = el;
           }
         }}
-        id="about1"
+        id="about"
         className="h-screen"
       >
         <About1 />
