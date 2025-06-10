@@ -17,25 +17,72 @@ export default function Page() {
   const sectionsRef = useRef<HTMLElement[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // useEffect(() => {
+  //   const sections = sectionsRef.current;
+
+  //   // Create a single ScrollTrigger for the entire page
+  //   ScrollTrigger.create({
+  //     trigger: containerRef.current,
+  //     start: "top top",
+  //     end: "bottom bottom",
+  //     markers: false,
+  //     snap: {
+  //       snapTo: 1 / (sections.length - 1),
+  //       duration: 0.5,
+  //       ease: "power2.inOut",
+  //       inertia: false,
+  //     },
+  //   });
+
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
+
   useEffect(() => {
     const sections = sectionsRef.current;
+    const container = containerRef.current;
+    let currentIndex = 0;
+    let isScrolling = false;
 
-    // Create a single ScrollTrigger for the entire page
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: "top top",
-      end: "bottom bottom",
-      markers: false,
-      snap: {
-        snapTo: 1 / (sections.length - 1),
-        duration: 0.5,
+    const goToSection = (index: number) => {
+      if (isScrolling || index < 0 || index >= sections.length) return;
+
+      isScrolling = true;
+      currentIndex = index;
+
+      gsap.to(window, {
+        scrollTo: sections[index],
+        duration: 0.6,
         ease: "power2.inOut",
-        inertia: false,
-      },
-    });
+        onComplete: () => {
+          isScrolling = false;
+        },
+      });
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (isScrolling) return;
+
+      const delta = e.deltaY;
+
+      if (delta > 0) {
+        goToSection(currentIndex + 1);
+      } else if (delta < 0) {
+        goToSection(currentIndex - 1);
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+
+    // Optional: Prevent touch scrolling for mobile
+    const handleTouch = (e: TouchEvent) => e.preventDefault();
+    window.addEventListener("touchmove", handleTouch, { passive: false });
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchmove", handleTouch);
     };
   }, []);
 
