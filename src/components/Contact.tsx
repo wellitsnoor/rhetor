@@ -12,7 +12,7 @@ export default function About() {
           <Puzzle/>
         </div>
         <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-10">
-          <div className="flex flex-col md:text-5xl text-4xl w-full pl-15 md:pl-20">
+          <div className="flex flex-col md:text-5xl text-4xl w-full pl-10 md:pl-20">
             <p className="">
               Let's <b className="text-gray-500">Work</b> Together{" "}
             </p>
@@ -45,7 +45,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="flex mt-10 w-full pr-20 text-right flex-col md:text-5xl text-4xl">
+          <div className="flex mt-10 w-full md:pr-20 pr-10 text-right flex-col md:text-5xl text-4xl">
             <p className="">We'll get back, </p>
             <b className="text-gray-500">quick.</b>
           </div>

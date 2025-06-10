@@ -29,10 +29,7 @@ export default function Bubble() {
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
-        end: "bottom top",
         toggleActions: "play none none none",
-        onEnter: () => birth.restart(),
-        onEnterBack: () => birth.restart(),
       },
     });
 
@@ -71,25 +68,25 @@ export default function Bubble() {
           scale: 1,
           duration: 2,
         },
-        0.5
+        0.2
       )
       .to(
         cell2.current,
         {
           scale: 1,
           y: mobile ? -94 : -190,
-          duration: 2,
+          duration: 1.5,
         },
-        0.5
+        0.3
       )
       .to(
         cell3.current,
         {
           opacity: 1,
-          delay: 2,
-          duration: 0,
+          duration: 1.5,
+          delay: 1.5,
         },
-        0.5
+        0.4
       )
       .to(
         split2.current,
@@ -107,7 +104,7 @@ export default function Bubble() {
           x: mobile ? 77 : 190,
           duration: 2,
         },
-        2.5
+        1.2
       )
       .to(
         cell3.current,
@@ -116,7 +113,7 @@ export default function Bubble() {
           x: mobile ? 88 : 200,
           duration: 2,
         },
-        2.5
+        1
       )
       .to(
         cell4.current,
@@ -124,7 +121,7 @@ export default function Bubble() {
           scale: 1,
           duration: 1,
         },
-        3.0
+        1.5
       );
   });
 

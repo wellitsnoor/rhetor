@@ -3,6 +3,7 @@ import gsap from "gsap";
 
 export default function Puzzle() {
   const piece1 = useRef<SVGSVGElement>(null);
+  const piece2 = useRef<SVGSVGElement>(null);
   const container = useRef<HTMLDivElement>(null);
 
   const [mobile, setMobile] = useState(false);
@@ -19,17 +20,28 @@ export default function Puzzle() {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    gsap.to(piece1.current, {
-      x: mobile ? 48 : 82,
-      duration: 2,
-      ease: "power2.inOut",
+    const puzzle = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 1,
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
         toggleActions: "play none none none",
       },
+      defaults: {
+        ease: "power2.inOut",
+      }
     });
 
+    puzzle.to(piece1.current, {
+      x: mobile ? 48 : 82,
+      duration: 2,
+      yoyo: true,
+      repeat: -1,
+      repeatDelay: 1
+    }, 0);
+
+   
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -55,6 +67,7 @@ export default function Puzzle() {
         />
       </svg>
       <svg
+        ref={piece2}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         strokeWidth="1.5"

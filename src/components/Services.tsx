@@ -32,8 +32,8 @@ export default function Services() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <div className="w-full h-screen flex flex-col md:flex-row md:justify-center md:items-center px-16">
-      <div className="md:w-1/2 w-full mt-0 md:mt-0">
+    <div className="w-full h-screen flex flex-col md:flex-row md:justify-center md:items-center px-16 pt-10 md:pt-0">
+      <div className="md:w-1/2 w-full mt-10 md:mt-0">
         <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
           Our Services
         </h1>
@@ -73,9 +73,9 @@ export default function Services() {
             >
               <path
                 d="M16 8L8 16M8.00001 8L16 16"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
             {active === 0 && <Building />}
@@ -100,7 +100,7 @@ export default function Services() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col md:mt-10 mt-32">
+          <div className="flex flex-col md:mt-10 mt-32 w-full h-full">
             <Grid />
           </div>
         )}

@@ -35,13 +35,14 @@ export default function Lander() {
         scrollTrigger: {
           trigger: container.current,
           start: "top bottom",
+       
           toggleActions: "restart none none none",
-          onEnter: () => cell.restart(),
-          onEnterBack: () => cell.restart(),
         },
         defaults: {
-          repeat: 0,
+          repeat: -1,
+          yoyo: true,
           ease: "power2.inOut",
+          repeatDelay: 1,
         },
       });
 

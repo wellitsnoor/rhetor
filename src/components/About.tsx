@@ -26,12 +26,12 @@ export default function About() {
 
     const ctx = gsap.context(() => {
       const expland = gsap.timeline({
-        // scrollTrigger: {
-        //   trigger: container.current,
-        //   start: "top 80%", // when top of container hits 80% of viewport
-        //   toggleActions: "restart none none none", // play only once
-        // },
-        repeat: 0,
+        scrollTrigger: {
+          trigger: container.current,
+          start: mobile ? "top bottom" : "top 80%",
+          toggleActions: "play none none none",
+        },
+
         ease: "power2.inOut",
       });
 
@@ -70,6 +70,61 @@ export default function About() {
             duration: 1,
           },
           0.9
+        )
+        .to(
+          circle4.current,
+          {
+            x: mobile ? 75 : 150,
+            y: mobile ? -35 : -75,
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut",
+            repeatDelay: 1,
+            delay: 1,
+            duration: 2,
+          },
+          1
+        )
+        .to(
+          circle3.current,
+          {
+            x: mobile ? 50 : 100,
+            y: mobile ? -25 : -50,
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut",
+            repeatDelay: 1,
+            delay: 1,
+            duration: 2,
+          },
+          1
+        )
+        .to(
+          circle2.current,
+          {
+            x: mobile ? 25 : 50,
+            y: mobile ? -12 : -25,
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut",
+            delay: 1,
+            repeatDelay: 1,
+            duration: 2,
+          },
+          1
+        )
+        .to(
+          circle1.current,
+          {
+            x: 0,
+            y: 0,
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut",
+            delay: 1,
+            duration: 2,
+          },
+          1
         );
     });
 

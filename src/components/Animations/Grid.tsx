@@ -18,26 +18,16 @@ export default function Grid() {
   const outer7 = useRef<HTMLDivElement>(null);
   const outer8 = useRef<HTMLDivElement>(null);
 
-  const [key, setKey] = useState(1);
-
   useEffect(() => {
-    const handleResize = () => {
-      setKey((prev) => prev + 1);
-    };
 
-    window.addEventListener("resize", handleResize);
 
     const flower = gsap.timeline({
       ease: "power2.inOut",
-      // scrollTrigger: {
-      //   trigger: container.current,
-      //   start: "top bottom",
-      //   toggleActions: "restart none none none",
-      //   // onEnter: () => flower.play(),
-      //   // onEnterBack: () => flower.restart(),
-      //   // onLeave: () => flower.progress(0).pause(),
-      //   // onLeaveBack: () => flower.progress(0).pause(),
-      // },
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top bottom",
+        toggleActions: "play none none none",
+      },
     });
 
     gsap.set(
@@ -114,15 +104,14 @@ export default function Grid() {
       );
 
     return () => {
-      window.removeEventListener("resize", handleResize);
       flower.kill();
     };
-  }, [key]);
+  });
 
   return (
     <div
-      key={key}
-      className="relative w-full h-full flex justify-center items-center  md:translate-y-0 translate-y-[10rem]"
+
+      className="relative w-full h-full flex justify-center items-center"
       ref={container}
     >
       {/* horizontal */}
