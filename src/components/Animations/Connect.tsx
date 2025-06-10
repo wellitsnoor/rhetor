@@ -29,7 +29,6 @@ export default function () {
         trigger: connectRef.current,
         start: "top bottom",
         toggleActions: "play none none none",
-        markers: true,
       },
     });
 
