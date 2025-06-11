@@ -179,6 +179,7 @@ export default function Page() {
   return (
     <div ref={containerRef}>
       <Navbar sectionsRef={sectionsRef} />
+
       <section
         ref={(el) => {
           if (el) {

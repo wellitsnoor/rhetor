@@ -25,7 +25,6 @@ export default function Bubble() {
     window.addEventListener("resize", handleResize);
 
     const birth = gsap.timeline({
-      ease: "power2.inOut",
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
@@ -104,7 +103,7 @@ export default function Bubble() {
           x: mobile ? 77 : 190,
           duration: 2,
         },
-        1.2
+        "-=2.2"
       )
       .to(
         cell3.current,
@@ -128,7 +127,7 @@ export default function Bubble() {
   return (
     <div
       ref={container}
-      className="relative flex justify-center items-center w-full h-full  translate-y-[10%] md:translate-x-[0%] -translate-x-[7%]"
+      className="relative flex justify-center items-center w-full h-full translate-y-[10%] md:translate-x-[0%] -translate-x-[7%] overflow-hidden"
     >
       <div
         ref={cell1}

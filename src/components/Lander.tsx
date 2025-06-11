@@ -189,31 +189,31 @@ export default function Lander({ sectionsRef }: LanderProps) {
       >
         <div
           ref={nucleus}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle1}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle2}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle3}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle4}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle5}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle6}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/30 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/30 rounded-full"
         ></div>
         {/* <div
           ref={circle7}
