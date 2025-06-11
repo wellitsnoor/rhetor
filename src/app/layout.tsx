@@ -69,7 +69,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${neue.variable} ${neue.className} antialiased`}>
         {children}
-        <Footer />
+
       </body>
     </html>
   );
