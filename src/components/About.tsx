@@ -132,7 +132,7 @@ export default function About() {
       ctx.revert();
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, []);
 
   return (
     <>

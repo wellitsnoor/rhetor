@@ -83,9 +83,9 @@ export default function BigBang() {
       });
      
     });
-  });
+  }, []);
   return (
-    <div className="flex justify-center items-center bg-red-200">
+    <div className="flex justify-center items-center">
       <div
         ref={containerRef}
         className="relative w-full flex items-center justify-center h-full"

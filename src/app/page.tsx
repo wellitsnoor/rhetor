@@ -110,8 +110,8 @@ export default function Page() {
           y: sectionsRef.current[newIndex],
           autoKill: false,
         },
-        duration: 0.5,
-        ease: "power2.inOut",
+        duration: 0.75,
+        ease: "power2.out",
         onComplete: () => {
           isAnimating.current = false;
         },
@@ -119,7 +119,7 @@ export default function Page() {
     }
   };
 
-  const scrollThreshold = 50; // minimum scroll delta to trigger scroll
+  const scrollThreshold = 10; // minimum scroll delta to trigger scroll
   let scrollTimeout: NodeJS.Timeout;
 
   const handleWheel = (e: WheelEvent) => {

@@ -100,7 +100,7 @@ export default function Services() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col md:mt-10 mt-32 w-full h-full">
+          <div className="flex flex-col md:mt-10 mt-32">
             <Grid />
           </div>
         )}

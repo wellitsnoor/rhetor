@@ -65,11 +65,12 @@ export default function () {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, []);
 
   return (
     <div
       ref={connectRef}
+      key={1}
       className="relative w-full h-full overflow-hidden flex justify-center items-center translate-y-[10%]"
     >
       <div

@@ -45,7 +45,7 @@ export default function Puzzle() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, []);
 
   return (
     <div

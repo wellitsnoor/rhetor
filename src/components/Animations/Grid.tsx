@@ -106,7 +106,7 @@ export default function Grid() {
     return () => {
       flower.kill();
     };
-  });
+  }, []);
 
   return (
     <div
