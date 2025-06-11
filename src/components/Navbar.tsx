@@ -9,10 +9,11 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 
 type NavbarProps = {
+  updateIndex: (index: number) => void;
   sectionsRef: React.MutableRefObject<HTMLElement[]>;
 };
 
-export default function Navbar({ sectionsRef }: NavbarProps) {
+export default function Navbar({ sectionsRef, updateIndex }: NavbarProps) {
   const [open, setOpen] = useState(false);
 
   const scrollToSection = (index: number) => {
@@ -25,6 +26,7 @@ export default function Navbar({ sectionsRef }: NavbarProps) {
       });
     }
     setOpen(false);
+    updateIndex(index);
   };
 
   return (

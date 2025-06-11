@@ -90,6 +90,10 @@ export default function Page() {
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
 
+  const updateIndex = (index: number) => {
+    setIndex(index);
+  };
+
   const handleScroll = (direction: "up" | "down") => {
     if (isAnimating.current) return;
 
@@ -178,7 +182,7 @@ export default function Page() {
 
   return (
     <div ref={containerRef}>
-      <Navbar sectionsRef={sectionsRef} />
+      <Navbar sectionsRef={sectionsRef} updateIndex={updateIndex} />
 
       <section
         ref={(el) => {
