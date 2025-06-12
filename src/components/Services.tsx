@@ -32,8 +32,8 @@ export default function Services() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <div className="w-full h-screen flex flex-col md:flex-row justify-center items-center md:px-16 px-10 ">
-      <div className="flex flex-col md:w-1/2 w-full h-fit ">
+    <div className="w-full h-screen flex flex-col md:flex-row justify-center items-center md:px-16 px-10">
+      <div className="flex flex-col md:w-1/2 w-full h-fit">
         <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
           Our Services
         </h1>
@@ -61,7 +61,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="md:w-1/2 w-full h-fit mt-10  overflow-hidden">
+      <div className="md:w-1/2 w-full h-fit translate-y-[0%] md:-translate-y-[5%] mt-10 md:mt-0 overflow-hidden">
         {active !== null ? (
           <div className="flex flex-col mt-10 gap-3">
             <svg
@@ -98,13 +98,13 @@ export default function Services() {
               <p className="text-3xl xl:px-20 md:text-4xl  font-bold mt-10 xl:mt-20">
                 {services[active].title2}
               </p>
-              <p className="text-sm xl:px-20 md:text-base xl:text-2xl mt-5 font-normal text-justify">
+              <p className="text-sm xl:px-20 md:text-base xl:text-xl mt-5 font-normal text-justify">
                 {services[active].description}
               </p>
             </div>
           </div>
         ) : (
-          <div className="flex flex-col md:mt-10 mt-10 md:h-fit h-[15rem]">
+          <div className="flex flex-col md:mt-10 mt-10 md:h-[27rem] h-[15rem] ">
             <Grid />
           </div>
         )}
