@@ -139,7 +139,7 @@ export default function About() {
    
       <div className="w-full overflow-hidden h-screen flex md:flex-row flex-col ">
         <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-24">
-          <div className="flex flex-col xl:text-5xl text-2xl ml-0 md:ml-10 xl:ml-0">
+          <div className="flex flex-col xl:text-5xl text-[1.4rem] ml-0 md:ml-10 xl:ml-0">
             <p className="">We don't just "do"</p>
             <p className="">
               <b className="text-gray-500">influencer marketing</b> or
@@ -156,7 +156,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="xl:w-[80%] w-[90%] mt-14 flex justify-center items-center gap-10 xl:text-base text-[0.7rem]">
+          <div className="xl:w-[80%] w-[90%] mt-10 flex justify-center items-center gap-10 xl:text-base text-[0.7rem]">
             <p className="flex flex-row justify-center items-center ">
               {" "}
               <b className="text-rhetor text-5xl mr-3">·</b>Clear thinking
@@ -176,7 +176,7 @@ export default function About() {
         </div>
         <div
           ref={container}
-          className="md:w-1/2 w-full h-full flex lg:-translate-x-[10%] md:-translate-x-[10%] -translate-x-[15%] flex-col justify-center items-center relative"
+          className="md:w-1/2 w-full h-full flex lg:-translate-x-[10%] md:-translate-x-[10%] -translate-x-[15%] flex-col justify-center items-center relative -translate-y-[10%]"
         >
           <div
             ref={circle1}
