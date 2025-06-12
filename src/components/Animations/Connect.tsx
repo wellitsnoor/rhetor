@@ -65,7 +65,7 @@ export default function () {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [mobile]);
 
   return (
     <div

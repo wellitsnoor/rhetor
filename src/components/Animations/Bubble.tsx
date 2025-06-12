@@ -127,7 +127,7 @@ export default function Bubble() {
       birth.kill();
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [mobile]);
 
   return (
     <div
