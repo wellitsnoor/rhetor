@@ -132,7 +132,7 @@ export default function Bubble() {
   return (
     <div
       ref={container}
-      className="relative flex justify-center items-center w-full h-full translate-y-[10%] md:translate-x-[0%] -translate-x-[7%] overflow-hidden"
+      className="relative flex justify-center items-center w-full h-full overflow-hidden"
     >
       <div
         ref={cell1}
