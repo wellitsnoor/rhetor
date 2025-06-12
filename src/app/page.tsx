@@ -89,6 +89,7 @@ export default function Page() {
 
   const [index, setIndex] = useState(0);
   const isAnimating = useRef(false);
+  const [mobile, setMobile] = useState(false);
 
   const updateIndex = (index: number) => {
     setIndex(index);
@@ -114,7 +115,7 @@ export default function Page() {
           y: sectionsRef.current[newIndex],
           autoKill: false,
         },
-        duration: 1,
+        duration: mobile ? 0 : 0.5,
         ease: "power2.inOut",
         onComplete: () => {
           isAnimating.current = false;
@@ -123,7 +124,7 @@ export default function Page() {
     }
   };
 
-  const scrollThreshold = 1; // minimum scroll delta to trigger scroll
+  const scrollThreshold = 10; // minimum scroll delta to trigger scroll
   let scrollTimeout: NodeJS.Timeout;
 
   const handleWheel = (e: WheelEvent) => {
@@ -141,7 +142,7 @@ export default function Page() {
       } else {
         handleScroll("up");
       }
-    }, 0); // only fire once per scroll burst
+    }, 50); // only fire once per scroll burst
   };
 
   const handleTouch = (() => {
@@ -159,6 +160,12 @@ export default function Page() {
   })();
 
   useEffect(() => {
+    const handleResize = () => {
+      setMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
     window.addEventListener("wheel", handleWheel, { passive: false });
     window.addEventListener("touchstart", handleTouch.start, {
       passive: false,
@@ -166,6 +173,7 @@ export default function Page() {
     window.addEventListener("touchend", handleTouch.end, { passive: false });
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("touchstart", handleTouch.start);
       window.removeEventListener("touchend", handleTouch.end);
@@ -248,6 +256,40 @@ export default function Page() {
       >
         <Footer />
       </section>
+
+      <div className="fixed flex flex-row bottom-0 w-fit right-0 m-10">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="cursor-pointer hover:scale-105 transition-all size-12 md:size-14"
+          onClick={() => handleScroll("up")}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m15 11.25-3-3m0 0-3 3m3-3v7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="cursor-pointer hover:scale-105 transition-all size-12 md:size-14"
+          onClick={() => handleScroll("down")}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+      </div>
     </div>
   );
 }

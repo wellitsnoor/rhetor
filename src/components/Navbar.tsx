@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
@@ -16,12 +16,13 @@ type NavbarProps = {
 export default function Navbar({ sectionsRef, updateIndex }: NavbarProps) {
   const [open, setOpen] = useState(false);
 
+
   const scrollToSection = (index: number) => {
     const section = sectionsRef.current[index];
     if (section) {
       gsap.to(window, {
         scrollTo: section,
-        duration: 0.75,
+        duration: window.innerWidth < 1024 ? 0 : 0.75,
         ease: "power2.out",
       });
     }
@@ -51,16 +52,36 @@ export default function Navbar({ sectionsRef, updateIndex }: NavbarProps) {
           <div className="flex items-center justify-between">
             <ul className="items-center justify-between gap-10 hidden md:flex">
               <li>
-                <button className="cursor-pointer" onClick={() => scrollToSection(0)}>Home</button>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(0)}
+                >
+                  Home
+                </button>
               </li>
               <li>
-                <button className="cursor-pointer" onClick={() => scrollToSection(1)}>About</button>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(1)}
+                >
+                  About
+                </button>
               </li>
               <li>
-                <button className="cursor-pointer" onClick={() => scrollToSection(3)}>Services</button>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(3)}
+                >
+                  Services
+                </button>
               </li>
               <li>
-                <button className="cursor-pointer" onClick={() => scrollToSection(4)}>Contact</button>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(4)}
+                >
+                  Contact
+                </button>
               </li>
             </ul>
             <Image
