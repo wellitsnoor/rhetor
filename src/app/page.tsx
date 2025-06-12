@@ -1,6 +1,6 @@
 "use client";
 
-import About from "@/components/About";
+import About from "@/components/About2";
 import Contact from "@/components/Contact";
 import Lander from "@/components/Lander";
 import Services from "@/components/Services";

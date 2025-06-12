@@ -24,7 +24,7 @@ export default function About1() {
           We’re a content and creator agency that pairs thoughtful strategy with
           high-impact execution.
         </p>
-        <p className="w-[70%] text-sm md:text-base mt-3 text-right">
+        <p className="w-[70%] text-sm md:text-base mt-3 md:text-right text-left">
           Whether you’re a brand or a creator, we’re here to make your life
           easier, and your work stand out.
         </p>

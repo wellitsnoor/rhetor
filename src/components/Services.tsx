@@ -95,7 +95,7 @@ export default function Services() {
             )}
 
             <div>
-              <p className="text-3xl xl:px-20 md:text-4xl  font-bold mt-10 xl:mt-20">
+              <p className="text-2xl xl:px-20 md:text-4xl  font-bold mt-10 xl:mt-20">
                 {services[active].title2}
               </p>
               <p className="text-sm xl:px-20 md:text-base xl:text-xl mt-5 font-normal text-justify">

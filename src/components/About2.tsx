@@ -140,7 +140,7 @@ export default function About() {
       <div className="w-full overflow-hidden justify-center items-center
        h-screen flex md:flex-row flex-col">
         <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center items-center md:mt-0 mt-24 ">
-          <div className="flex flex-col xl:text-5xl text-[1.4rem] ml-0 md:ml-10 xl:ml-0">
+          <div className="flex flex-col xl:text-5xl text-3xl ml-0 md:ml-10 xl:ml-0">
             <p className="">We don't just "do"</p>
             <p className="">
               <b className="text-gray-500">influencer marketing</b> or
