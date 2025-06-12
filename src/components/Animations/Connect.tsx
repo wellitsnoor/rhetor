@@ -71,7 +71,7 @@ export default function () {
     <div
       ref={connectRef}
       key={1}
-      className="relative w-full h-full overflow-hidden flex justify-center items-center -translate-y-[10%] "
+      className="relative w-full h-full overflow-hidden flex justify-center items-center md:translate-y-[10%] translate-y-[15%] "
     >
       <div
         ref={top}

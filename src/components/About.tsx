@@ -176,7 +176,7 @@ export default function About() {
         </div>
         <div
           ref={container}
-          className="md:w-1/2 w-full h-full flex lg:-translate-x-[10%] md:-translate-x-[10%] -translate-x-[15%] flex-col justify-center items-center relative -translate-y-[10%]"
+          className="md:w-1/2 w-full h-full flex lg:-translate-x-[10%] md:-translate-x-[10%] -translate-x-[15%] flex-col justify-center items-center relative -translate-y-[10%] md:translate-y-[10%]"
         >
           <div
             ref={circle1}
