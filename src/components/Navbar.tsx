@@ -64,7 +64,7 @@ export default function Navbar({ sectionsRef, updateIndex }: NavbarProps) {
               </li>
             </ul>
             <Image
-              src="/logo/logo-red.png"
+              src={open ? "/logo/logo-white.png" : "/logo/logo-red.png"}
               alt="logo"
               width={0}
               height={0}

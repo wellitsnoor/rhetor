@@ -114,8 +114,8 @@ export default function Page() {
           y: sectionsRef.current[newIndex],
           autoKill: false,
         },
-        duration: 0.75,
-        ease: "power2.out",
+        duration: 1,
+        ease: "power2.inOut",
         onComplete: () => {
           isAnimating.current = false;
         },
@@ -123,7 +123,7 @@ export default function Page() {
     }
   };
 
-  const scrollThreshold = 10; // minimum scroll delta to trigger scroll
+  const scrollThreshold = 1; // minimum scroll delta to trigger scroll
   let scrollTimeout: NodeJS.Timeout;
 
   const handleWheel = (e: WheelEvent) => {
@@ -141,7 +141,7 @@ export default function Page() {
       } else {
         handleScroll("up");
       }
-    }, 100); // only fire once per scroll burst
+    }, 0); // only fire once per scroll burst
   };
 
   const handleTouch = (() => {
@@ -152,8 +152,8 @@ export default function Page() {
       },
       end: (e: TouchEvent) => {
         const endY = e.changedTouches[0].clientY;
-        if (startY - endY > 50) handleScroll("down");
-        else if (endY - startY > 50) handleScroll("up");
+        if (startY - endY > 10) handleScroll("down");
+        else if (endY - startY > 10) handleScroll("up");
       },
     };
   })();
