@@ -32,8 +32,8 @@ export default function Services() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <div className="w-full h-screen flex flex-col md:flex-row md:justify-center md:items-center px-16 pt-10 md:pt-0">
-      <div className="md:w-1/2 w-full mt-10 md:mt-0">
+    <div className="w-full h-screen flex flex-col md:flex-row justify-center items-center md:px-16 px-10 ">
+      <div className="flex flex-col md:w-1/2 w-full h-fit ">
         <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
           Our Services
         </h1>
@@ -61,7 +61,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="md:w-1/2 w-full ">
+      <div className="md:w-1/2 w-full h-fit mt-10  overflow-hidden">
         {active !== null ? (
           <div className="flex flex-col mt-10 gap-3">
             <svg
@@ -78,14 +78,18 @@ export default function Services() {
                 strokeLinejoin="round"
               />
             </svg>
-            {active === 0 && <Building />}
+            {active === 0 && (
+              <div className="md:h-fit flex md:my-0 h-[3rem]">
+                <Building />
+              </div>
+            )}
             {active === 1 && (
-              <div className="">
+              <div className="md:h-fit md:my-0 my-10 h-[0rem]">
                 <Camera />
               </div>
             )}
             {active === 2 && (
-              <div className="my-10">
+              <div className="my-10 flex md:h-fit h-[0rem] translate-x-[50%]">
                 <BigBang />
               </div>
             )}
@@ -100,7 +104,7 @@ export default function Services() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col md:mt-10 mt-36">
+          <div className="flex flex-col md:mt-10 mt-10 md:h-fit h-[15rem]">
             <Grid />
           </div>
         )}

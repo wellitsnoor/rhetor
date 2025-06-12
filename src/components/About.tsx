@@ -137,8 +137,9 @@ export default function About() {
   return (
     <>
    
-      <div className="w-full overflow-hidden h-screen flex md:flex-row flex-col ">
-        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-24">
+      <div className="w-full overflow-hidden justify-center items-center
+       h-screen flex md:flex-row flex-col">
+        <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center items-center md:mt-0 mt-24 ">
           <div className="flex flex-col xl:text-5xl text-[1.4rem] ml-0 md:ml-10 xl:ml-0">
             <p className="">We don't just "do"</p>
             <p className="">
@@ -176,7 +177,7 @@ export default function About() {
         </div>
         <div
           ref={container}
-          className="md:w-1/2 w-full h-full flex lg:-translate-x-[10%] md:-translate-x-[10%] -translate-x-[15%] flex-col justify-center items-center relative -translate-y-[10%] md:translate-y-[10%]"
+          className="md:w-1/2 w-full h-[15rem] md:mt-0 mt-20 flex lg:-translate-x-[10%] md:-translate-x-[10%] -translate-x-[15%] flex-col justify-center items-center relative -translate-y-[10%] md:translate-y-[10%] "
         >
           <div
             ref={circle1}

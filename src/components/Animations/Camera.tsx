@@ -68,10 +68,10 @@ export default function Camera() {
   }, []);
 
   return (
-    <div className="flex relative h-40 justify-center items-center">
+    <div className="flex relative h-full justify-center items-center">
       <div
         ref={container}
-        className="relative  flex items-center justify-center xl:w-64 w-52 xl:h-40 h-32"
+        className="relative flex items-center justify-center xl:w-64 w-52 xl:h-40 h-32"
       >
         <div
           ref={body}

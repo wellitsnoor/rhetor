@@ -24,7 +24,7 @@ export default function Building() {
 
     grow.to(buildings.current, {
       height: (index) => {
-        const heights = !mobile ? [48, 80, 112, 160] : [12, 20, 28, 40]; // h-12, h-20, h-28, h-40 in pixels
+        const heights = !mobile ? [48/2, 80/2, 112/2, 160/2] : [12, 20, 28, 40]; // h-12, h-20, h-28, h-40 in pixels
         return heights[index];
       },
       duration: 1,
@@ -36,7 +36,7 @@ export default function Building() {
 
   return (
     <div
-      className="w-full relative h-40 justify-center text-center bottom-0 flex gap-3"
+      className="w-full relative md:h-40 h-20 justify-center text-center bottom-0 flex gap-3"
       ref={container}
     >
       {[...Array(4)].map((_, i) => {

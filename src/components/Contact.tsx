@@ -8,12 +8,12 @@ import Connect from "@/components/Animations/Connect";
 export default function About() {
   return (
     <>
-      <div className="w-full h-screen flex md:flex-row flex-col-reverse">
-        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center relative overflow-hidden">
+      <div className="w-full h-screen flex md:flex-row justify-center items-center flex-col-reverse">
+        <div className="md:w-1/2 w-full md:h-full mt-10  h-[13rem] flex flex-col justify-center items-center relative overflow-hidden">
           {/* <Puzzle/> */}
           <Connect/>
         </div>
-        <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:mt-0 mt-20">
+        <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center items-center md:mt-0">
           <div className="flex flex-col md:text-5xl text-4xl w-full pl-10 md:pl-20">
             <p className="">
               Let's <b className="text-gray-500">Work</b> Together{" "}
