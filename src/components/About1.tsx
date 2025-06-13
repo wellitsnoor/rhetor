@@ -5,7 +5,7 @@ import Bubble from "./Animations/Bubble";
 export default function About1() {
   return (
     <div className="w-full h-screen flex md:flex-row flex-col-reverse justify-center items-center">
-      <div className="md:w-1/2 w-full md:h-full h-[17rem] flex flex-col -translate-x-[10%] md:translate-y-[15%] translate-y-[0%] ">
+      <div className="md:w-1/2 w-full md:h-full h-[17rem] mt-10 flex flex-col -translate-x-[10%] md:translate-y-[15%] translate-y-[0%] ">
         <Bubble />
       </div>
       <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:pt-0 pt-20">
@@ -24,7 +24,7 @@ export default function About1() {
           We’re a content and creator agency that pairs thoughtful strategy with
           high-impact execution.
         </p>
-        <p className="w-[70%] text-sm md:text-base mt-3 md:text-right text-left">
+        <p className="w-[70%] text-sm md:text-base mt-3 md:text-left text-left">
           Whether you’re a brand or a creator, we’re here to make your life
           easier, and your work stand out.
         </p>
