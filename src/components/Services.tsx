@@ -32,9 +32,9 @@ export default function Services() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <div className="w-full h-screen flex flex-col md:flex-row justify-center items-center md:px-16 px-10">
+    <div className="w-full h-screen flex flex-col md:flex-row justify-center items-center md:px-16 px-20">
       <div className="flex flex-col md:w-1/2 w-full h-fit">
-        <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold">
+        <h1 className="text-4xl md:text-4xl xl:text-5xl font-bold">
           Our Services
         </h1>
 
@@ -61,7 +61,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="md:w-1/2 w-full h-fit translate-y-[0%] md:-translate-y-[5%] mt-10 md:mt-0 overflow-hidden">
+      <div className="md:w-1/2 w-full h-fit translate-y-[0%] md:-translate-y-[5%] mt-0 md:mt-0 overflow-hidden">
         {active !== null ? (
           <div className="flex flex-col mt-10 gap-3">
             <svg

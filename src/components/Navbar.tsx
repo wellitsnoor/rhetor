@@ -34,7 +34,7 @@ export default function Navbar({ sectionsRef, updateIndex }: NavbarProps) {
     <>
       <div className="fixed flex top-0 h-20 justify-between items-center w-full z-50">
         <div className="flex mr-auto md:pl-10 pl-7 z-50">
-          <div className="flex items-center justify-between md:w-40 w-36">
+          <div className="flex items-center justify-between md:w-40 w-24">
             <a href="#" onClick={(e) => scrollToSection(0)}>
               <Image
                 src={open ? "/logo/text-white.png" : "/logo/text-white.png"}

@@ -139,38 +139,38 @@ export default function About() {
    
       <div className="w-full overflow-hidden justify-center items-center
        h-screen flex md:flex-row flex-col">
-        <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center items-center md:mt-0 mt-24 ">
-          <div className="flex flex-col xl:text-5xl text-3xl ml-0 md:ml-10 xl:ml-0">
+        <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center md:items-center md:mt-0 mt-24">
+          <div className="flex flex-col xl:text-5xl text-3xl md:ml-20 ml-20 xl:ml-0">
             <p className="">We don't just "do"</p>
             <p className="">
-              <b className="text-gray-500">influencer marketing</b> or
+              <b className="text-neutral-400">influencer marketing</b> or
             </p>
             <p className="">
-              <b className="text-gray-500">content production</b>.
+              <b className="text-neutral-400">content production</b>.
             </p>
 
-            <p className=" ml-20 mt-3 text-right">
+            <p className=" md:ml-20 ml-0 mt-3 md:text-right">
               We help you <b>grow</b>
             </p>
-            <p className=" ml-20 text-right">
+            <p className=" md:ml-20 md:text-right">
               <b>connect</b>, and <b>thrive</b>.
             </p>
           </div>
 
-          <div className="xl:w-[80%] w-[90%] mt-10 flex justify-center items-center gap-10 xl:text-base text-[0.7rem]">
+          <div className="xl:w-[80%] w-[90%] mt-10 flex justify-center items-center gap-10 xl:text-base text-[0.7rem] ml-5 ">
             <p className="flex flex-row justify-center items-center ">
               {" "}
-              <b className="text-rhetor text-5xl mr-3">·</b>Clear thinking
+              <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>Clear thinking
               behind every campaign
             </p>
             <p className=" flex flex-row justify-center items-center">
               {" "}
-              <b className="text-rhetor text-5xl mr-3">·</b>Consistent delivery
+              <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>Consistent delivery
               without the chaos
             </p>
             <p className=" flex flex-row justify-center items-center">
               {" "}
-              <b className="text-rhetor text-5xl mr-3">·</b>A team that shows up
+              <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>A team that shows up
               like a guide & feels like a friend
             </p>
           </div>

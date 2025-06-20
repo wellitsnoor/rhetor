@@ -155,7 +155,7 @@ export default function Lander({ sectionsRef }: LanderProps) {
 
   return (
     <div className="w-screen h-screen flex md:flex-row flex-col">
-      <div className="md:w-1/2 w-full h-full flex flex-col justify-center xl:pl-40 md:pl-20 pl-10 md:py-0 pt-32 xl:text-5xl lg:text-[2.5rem] text-3xl ">
+      <div className="md:w-1/2 w-full h-full flex flex-col justify-center xl:pl-40 md:pl-20 pl-20 md:py-0 pt-32 xl:text-5xl lg:text-[2.5rem] text-3xl ">
         <p className="">At Rhetor, we believe</p>
         <p className="">
           <b className="text-rhetor"> great content </b> takes{" "}
@@ -165,7 +165,7 @@ export default function Lander({ sectionsRef }: LanderProps) {
         </p>
         <p className="mt-7 mb-10">
           {" "}
-          it takes <b className="">INTENT.</b>
+          it takes <b className="text-neutral-400">INTENT.</b>
         </p>
         <div
           className="cursor-pointer flex w-fit"

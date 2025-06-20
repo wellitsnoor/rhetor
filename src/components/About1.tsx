@@ -8,19 +8,19 @@ export default function About1() {
       <div className="md:w-1/2 w-full md:h-full h-[17rem] mt-10 flex flex-col -translate-x-[10%] md:translate-y-[15%] translate-y-[0%] ">
         <Bubble />
       </div>
-      <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center items-center md:pt-0 pt-20">
-        <div className="flex flex-col ">
+      <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center md:items-center ml-40 md:pt-0 pt-20">
+        <div className="flex flex-col">
           <motion.p className="xl:text-5xl text-4xl">
-            <b className="text-gray-500">How</b> we work{" "}
+            <b className="text-neutral-400">How</b> we work{" "}
             <b className="text-rhetor">·</b>
           </motion.p>
-          <p className="xl:text-5xl text-4xl ml-20 mt-3">
+          <p className="xl:text-5xl text-4xl md:ml-20 mt-3">
             <b className="text-rhetor">·</b>{" "}
-            <b className="text-gray-500">Why</b> it <b>works</b>
+            <b className="text-neutral-400">Why</b> it <b>works</b>
           </p>
         </div>
 
-        <p className="w-[70%] text-sm md:text-base mt-14 text-left">
+        <p className="w-[70%] text-sm md:text-base mt-14 md:text-left text-left ">
           We’re a content and creator agency that pairs thoughtful strategy with
           high-impact execution.
         </p>
