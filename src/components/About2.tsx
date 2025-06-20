@@ -140,7 +140,7 @@ export default function About() {
       <div className="w-full overflow-hidden justify-center items-center
        h-screen flex md:flex-row flex-col">
         <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center md:items-center md:mt-0 mt-24">
-          <div className="flex flex-col xl:text-5xl text-3xl md:ml-20 ml-20 xl:ml-0">
+          <div className="flex flex-col xl:text-5xl text-3xl md:pl-20 pl-10 xl:pl-0">
             <p className="">We don't just "do"</p>
             <p className="">
               <b className="text-neutral-400">influencer marketing</b> or
@@ -149,7 +149,7 @@ export default function About() {
               <b className="text-neutral-400">content production</b>.
             </p>
 
-            <p className=" md:ml-20 ml-0 mt-3 md:text-right">
+            <p className=" md:ml-20 ml-0 mt-5 md:text-right">
               We help you <b>grow</b>
             </p>
             <p className=" md:ml-20 md:text-right">
@@ -157,7 +157,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="xl:w-[80%] w-[90%] mt-10 flex justify-center items-center gap-10 xl:text-base text-[0.7rem] ml-5 ">
+          <div className="xl:w-[80%] w-[90%] mt-10 flex justify-center items-center gap-3 md:gap-10 xl:text-base text-[0.7rem] ml-5 ">
             <p className="flex flex-row justify-center items-center ">
               {" "}
               <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>Clear thinking

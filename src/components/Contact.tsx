@@ -13,7 +13,7 @@ export default function About() {
           {/* <Puzzle/> */}
           <Connect/>
         </div>
-        <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center md:items-center md:ml-0 ml-40 md:mt-0">
+        <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center md:items-center md:ml-0 pl-10 md:pl-0 md:mt-0">
           <div className="flex flex-col md:text-5xl text-4xl w-full  md:pl-20">
             <p className="">
               Let's <b className="text-gray-500">Work</b> Together{" "}

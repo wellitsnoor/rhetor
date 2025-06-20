@@ -32,7 +32,7 @@ export default function Services() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <div className="w-full h-screen flex flex-col md:flex-row justify-center items-center md:px-16 px-20">
+    <div className="w-full h-screen flex flex-col md:flex-row justify-center items-center md:px-16 px-10">
       <div className="flex flex-col md:w-1/2 w-full h-fit">
         <h1 className="text-4xl md:text-4xl xl:text-5xl font-bold">
           Our Services
