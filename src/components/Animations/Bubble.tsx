@@ -119,6 +119,9 @@ export default function Bubble() {
         {
           scale: 1,
           duration: 1,
+          repeat: -1,
+          repeatDelay: 1,
+          yoyo: true,
         },
         1.5
       );

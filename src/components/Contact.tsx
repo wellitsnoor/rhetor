@@ -16,7 +16,7 @@ export default function About() {
         <div className="md:w-1/2 w-full md:h-full h-fit flex flex-col justify-center md:items-center md:ml-0 pl-10 md:pl-0 md:mt-0">
           <div className="flex flex-col md:text-5xl text-4xl w-full  md:pl-20">
             <p className="">
-              Let's <b className="text-gray-500">Work</b> Together{" "}
+              Let's <b className="text-neutral-500">Work</b> Together{" "}
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function About() {
 
           <div className="flex mt-10 w-full md:pr-20 pr-10 md:text-right text-left flex-col md:text-5xl text-4xl">
             <p className="">We'll get back, </p>
-            <b className="text-gray-500">quick.</b>
+            <b className="text-neutral-500">quick.</b>
           </div>
         </div>
       </div>
