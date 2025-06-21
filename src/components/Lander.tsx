@@ -7,7 +7,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Lander() {
+type LanderProps = {
+  sectionsRef: React.MutableRefObject<HTMLElement[]>;
+};
+
+export default function Lander({ sectionsRef }: LanderProps) {
   const container = useRef<HTMLDivElement>(null);
   const nucleus = useRef<HTMLDivElement>(null);
   const circle1 = useRef<HTMLDivElement>(null);
@@ -35,13 +39,14 @@ export default function Lander() {
         scrollTrigger: {
           trigger: container.current,
           start: "top bottom",
+
           toggleActions: "restart none none none",
-          onEnter: () => cell.restart(),
-          onEnterBack: () => cell.restart(),
         },
         defaults: {
-          repeat: 0,
+          repeat: -1,
+          yoyo: true,
           ease: "power2.inOut",
+          repeatDelay: 1,
         },
       });
 
@@ -160,9 +165,23 @@ export default function Lander() {
         </p>
         <p className="mt-7 mb-10">
           {" "}
-          it takes <b className="">INTENT.</b>
+          it takes <b className="text-neutral-400">INTENT.</b>
         </p>
-        <Button text="Know more" link="/#about" />
+        <div
+          className="cursor-pointer flex w-fit"
+          onClick={() => {
+            const about = sectionsRef.current[1];
+            if (about) {
+              gsap.to(window, {
+                scrollTo: about,
+                duration: 0.75,
+                ease: "power2.out",
+              });
+            }
+          }}
+        >
+          <Button text="Know more" />
+        </div>
       </div>
       <div
         className="md:w-1/2 w-full h-full relative flex justify-center items-center"
@@ -170,31 +189,31 @@ export default function Lander() {
       >
         <div
           ref={nucleus}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle1}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle2}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle3}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle4}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle5}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/50 rounded-full"
         ></div>
         <div
           ref={circle6}
-          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/30 rounded-full cursor-pointer"
+          className="absolute lg:w-28 md:w-20 w-16 lg:h-28 md:h-20 h-16 bg-gradient-to-r from-rhetor/100 to-rhetor/30 rounded-full"
         ></div>
         {/* <div
           ref={circle7}

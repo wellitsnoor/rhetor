@@ -1,17 +1,41 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-export default function Navbar() {
+gsap.registerPlugin(ScrollToPlugin);
+
+type NavbarProps = {
+  updateIndex: (index: number) => void;
+  sectionsRef: React.MutableRefObject<HTMLElement[]>;
+};
+
+export default function Navbar({ sectionsRef, updateIndex }: NavbarProps) {
   const [open, setOpen] = useState(false);
+
+
+  const scrollToSection = (index: number) => {
+    const section = sectionsRef.current[index];
+    if (section) {
+      gsap.to(window, {
+        scrollTo: section,
+        duration: window.innerWidth < 1024 ? 0 : 0.75,
+        ease: "power2.out",
+      });
+    }
+    setOpen(false);
+    updateIndex(index);
+  };
+
   return (
     <>
       <div className="fixed flex top-0 h-20 justify-between items-center w-full z-50">
         <div className="flex mr-auto md:pl-10 pl-7 z-50">
-          <div className="flex items-center justify-between md:w-40 w-36">
-            <a href="/">
+          <div className="flex items-center justify-between md:w-40 w-24">
+            <a href="#" onClick={(e) => scrollToSection(0)}>
               <Image
                 src={open ? "/logo/text-white.png" : "/logo/text-white.png"}
                 alt="logo"
@@ -28,20 +52,40 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <ul className="items-center justify-between gap-10 hidden md:flex">
               <li>
-                <a href="/#" onClick={() => setOpen(false)}>Home</a>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(0)}
+                >
+                  Home
+                </button>
               </li>
               <li>
-                <a href="/#about" onClick={() => setOpen(false)}>About</a>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(1)}
+                >
+                  About
+                </button>
               </li>
               <li>
-                <a href="/#services" onClick={() => setOpen(false)}>Services</a>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(3)}
+                >
+                  Services
+                </button>
               </li>
               <li>
-                <a href="/#contact" onClick={() => setOpen(false)}>Contact</a>
+                <button
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(4)}
+                >
+                  Contact
+                </button>
               </li>
             </ul>
             <Image
-              src="/logo/logo-white.png"
+              src={open ? "/logo/logo-white.png" : "/logo/logo-red.png"}
               alt="logo"
               width={0}
               height={0}
@@ -60,22 +104,21 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className={`fixed w-screen bg-rhetor h-screen z-20`}
+            className={`fixed w-screen bg-rhetor h-screen z-20 `}
           >
             <ul className="flex flex-col items-center justify-center h-full gap-10 text-2xl">
               <li>
-                <a href="/#" onClick={() => setOpen(false)}>Home</a>
+                <button onClick={() => scrollToSection(0)}>Home</button>
               </li>
               <li>
-                <a href="/#about" onClick={() => setOpen(false)}>About</a>
+                <button onClick={() => scrollToSection(1)}>About</button>
               </li>
               <li>
-                <a href="/#services" onClick={() => setOpen(false)}>Services</a>
+                <button onClick={() => scrollToSection(3)}>Services</button>
               </li>
               <li>
-                <a href="/#contact" onClick={() => setOpen(false)}>Contact</a>
+                <button onClick={() => scrollToSection(4)}>Contact</button>
               </li>
-
             </ul>
           </motion.div>
         )}

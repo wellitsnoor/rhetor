@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface ButtonProps {
   text: string;
-  link: string;
+  link?: string;
 }
 
 export default function Button({ text, link }: ButtonProps) {
@@ -17,7 +17,7 @@ export default function Button({ text, link }: ButtonProps) {
       initial={{ width: "8.79rem" }}
       whileHover={{ width: "12rem" }}
       transition={{ duration: 0.3 }}
-      href={link}
+      href={link || "#"}
       className="relative h-[2.9rem] text-xl text-white rounded-full border-1 overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
