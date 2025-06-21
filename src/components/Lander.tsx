@@ -9,9 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 type LanderProps = {
   sectionsRef: React.MutableRefObject<HTMLElement[]>;
+  setIndex: (index: number) => void;
 };
 
-export default function Lander({ sectionsRef }: LanderProps) {
+export default function Lander({ sectionsRef, setIndex }: LanderProps) {
   const container = useRef<HTMLDivElement>(null);
   const nucleus = useRef<HTMLDivElement>(null);
   const circle1 = useRef<HTMLDivElement>(null);
@@ -180,7 +181,7 @@ export default function Lander({ sectionsRef }: LanderProps) {
             }
           }}
         >
-          <Button text="Know more" />
+          <Button text="Know more" onClick={() => setIndex(1)} />
         </div>
       </div>
       <div

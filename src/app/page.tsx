@@ -243,7 +243,7 @@ export default function Page() {
         id="home"
         className="h-screen"
       >
-        <Lander sectionsRef={sectionsRef} />
+        <Lander sectionsRef={sectionsRef} setIndex={setIndex} />
       </section>
       <section
         ref={(el) => {
