@@ -5,7 +5,7 @@ import Bubble from "./Animations/Bubble";
 export default function About1() {
   return (
     <div className="w-full h-screen flex md:flex-row flex-col-reverse justify-center items-center">
-      <div className="md:w-1/2 w-full md:h-full h-[17rem] mt-10 flex flex-col -translate-x-[10%] md:translate-y-[15%] translate-y-[0%] ">
+      <div className="md:w-1/2 w-full md:h-full h-[17rem] md:mt-0 mt-10 flex flex-col -translate-x-[10%] md:translate-y-[15%] translate-y-[0%] ">
         <Bubble />
       </div>
       <div className="md:w-1/2 w-full md:h-full h-1/2 flex flex-col justify-center md:items-center pl-10 md:pt-0 pt-20">
