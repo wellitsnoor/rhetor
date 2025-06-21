@@ -4,7 +4,7 @@ import About from "@/components/About2";
 import Contact from "@/components/Contact";
 import Lander from "@/components/Lander";
 import Services from "@/components/Services";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -95,6 +95,45 @@ export default function Page() {
     setIndex(index);
   };
 
+  // Detect current section on page load/refresh
+  useEffect(() => {
+    const detectCurrentSection = () => {
+      if (sectionsRef.current.length === 0) return;
+
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+
+      // Find which section is currently most visible
+      let currentSectionIndex = 0;
+      let maxVisibility = 0;
+
+      sectionsRef.current.forEach((section, i) => {
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top + scrollY;
+        const sectionBottom = sectionTop + rect.height;
+
+        // Calculate how much of the section is visible in the viewport
+        const visibleTop = Math.max(0, windowHeight - rect.top);
+        const visibleBottom = Math.max(0, rect.bottom);
+        const visibleHeight = Math.min(visibleTop, visibleBottom);
+
+        if (visibleHeight > maxVisibility) {
+          maxVisibility = visibleHeight;
+          currentSectionIndex = i;
+        }
+      });
+
+      setIndex(currentSectionIndex);
+    };
+
+    // Small delay to ensure sections are rendered
+    const timer = setTimeout(detectCurrentSection, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleScroll = (direction: "up" | "down") => {
     if (isAnimating.current) return;
 
@@ -127,23 +166,26 @@ export default function Page() {
   const scrollThreshold = 10; // minimum scroll delta to trigger scroll
   let scrollTimeout: NodeJS.Timeout;
 
-  const handleWheel = (e: WheelEvent) => {
-    e.preventDefault();
-    if (isAnimating.current) return;
+  const handleWheel = useCallback(
+    (e: WheelEvent) => {
+      e.preventDefault();
+      if (isAnimating.current) return;
 
-    // Prevent spamming large deltaY values by locking until complete
-    if (Math.abs(e.deltaY) < scrollThreshold) return;
+      // Prevent spamming large deltaY values by locking until complete
+      if (Math.abs(e.deltaY) < scrollThreshold) return;
 
-    // Clear any pending rapid fire events
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      if (e.deltaY > 0) {
-        handleScroll("down");
-      } else {
-        handleScroll("up");
-      }
-    }, 50); // only fire once per scroll burst
-  };
+      // Clear any pending rapid fire events
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (e.deltaY > 0) {
+          handleScroll("down");
+        } else {
+          handleScroll("up");
+        }
+      }, 50); // only fire once per scroll burst
+    },
+    [index]
+  );
 
   const handleTouch = (() => {
     let startY = 0;
@@ -178,7 +220,7 @@ export default function Page() {
       window.removeEventListener("touchstart", handleTouch.start);
       window.removeEventListener("touchend", handleTouch.end);
     };
-  }, [index]);
+  }, [index, handleWheel]);
 
   // Prevent manual scroll
   useEffect(() => {
