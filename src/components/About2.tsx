@@ -157,7 +157,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="xl:w-[80%] w-[90%] mt-10 flex justify-center items-center gap-3 md:gap-10 xl:text-base text-[0.7rem] ml-5 ">
+          <div className="flex xl:w-[80%] w-[90%] mt-10 md:flex justify-center items-center md:gap-10 xl:text-base text-[0.7rem] pl-5 md:pl-10 ">
             <p className="flex flex-row justify-center items-center ">
               {" "}
               <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>Clear thinking
@@ -169,6 +169,24 @@ export default function About() {
               without the chaos
             </p>
             <p className=" flex flex-row justify-center items-center">
+              {" "}
+              <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>A team that shows up
+              like a guide & feels like a friend
+            </p>
+          </div>
+
+          <div className="hidden xl:w-[80%] w-[90%] mt-10 text-[0.7rem] pl-12 space-y-2 md:hidden">
+            <p className="flex flex-row items-center">
+              {" "}
+              <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>Clear thinking
+              behind every campaign
+            </p>
+            <p className="flex flex-row items-center">
+              {" "}
+              <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>Consistent delivery
+              without the chaos
+            </p>
+            <p className="flex flex-row items-center">
               {" "}
               <b className="text-rhetor text-5xl md:mr-3 mr-1">·</b>A team that shows up
               like a guide & feels like a friend
